@@ -183,6 +183,7 @@ gcc lexer.c -o lexer
 - Document your changes
 - Consider all possible error cases
 - Keep your code organized and well-commented
+- Add your documentation/ report under the documentation directory
 
 ## Final Notes
 Remember:
