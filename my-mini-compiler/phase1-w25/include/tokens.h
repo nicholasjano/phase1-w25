@@ -18,6 +18,9 @@ typedef enum {
     TOKEN_EOF,
     TOKEN_NUMBER,     // e.g., "123", "456"
     TOKEN_OPERATOR,   // e.g., "+", "-"
+    TOKEN_LITERAL,    // e.g., "Hello", "World", "Reverse C" 
+    TOKEN_PUNCTUATOR, // e.g., , , {, }, [, ], (, )
+    TOKEN_KEYWORD,    // e.g., "fi", "tni", "esle", "rof", "elihw"  
     TOKEN_ERROR
 } TokenType;
 
@@ -28,6 +31,9 @@ typedef enum {
     ERROR_NONE,
     ERROR_INVALID_CHAR,
     ERROR_INVALID_NUMBER,
+    ERROR_INVALID_KEYWORD, 
+    ERROR_INVALID_PUNCTUATOR,
+    ERROR_INVALID_STRING_LITERAL, 
     ERROR_CONSECUTIVE_OPERATORS
 } ErrorType;
 
@@ -40,6 +46,7 @@ typedef struct {
     TokenType type;
     char lexeme[100];   // Actual text of the token
     int line;           // Line number in source file
+    int column;         // Track the Column Number in Source File
     ErrorType error;    // Error type if any
 } Token;
 
