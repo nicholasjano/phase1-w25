@@ -18,6 +18,10 @@ typedef enum {
     TOKEN_EOF,
     TOKEN_NUMBER,     // e.g., "123", "456"
     TOKEN_OPERATOR,   // e.g., "+", "-"
+    TOKEN_IDENTIFIER, // e.g., "lastNames", "app_user"
+    TOKEN_LITERAL,    // e.g., "hello", "world"
+    TOKEN_PUCTUATOR,  // e.g., "(", "]"
+    TOKEN_KEYWORD,    // e.g., "int", "if"
     TOKEN_ERROR
 } TokenType;
 
