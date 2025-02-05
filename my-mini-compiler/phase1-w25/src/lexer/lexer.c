@@ -96,6 +96,19 @@ Token get_next_token(const char *input, int *pos) {
     // TODO: Add keyword and identifier handling here
     // Hint: You'll have to add support for keywords and identifiers, and then string literals
 
+    if (isalpha(c)) {
+        int i = 0;
+        do {
+            token.lexeme[i++] = c;
+            (*pos)++;
+            c = input[*pos];
+        } while (isdigit(c) && i < sizeof(token.lexeme) - 1);
+
+        token.lexeme[i] = '\0';
+        token.type = TOKEN_NUMBER;
+        return token;
+    }
+
     // TODO: Add string literal handling here
 
     // Handle operators
